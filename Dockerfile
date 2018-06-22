@@ -1,14 +1,19 @@
-FROM    centos:centos6
+FROM node:8
 
-# Enable EPEL for Node.js
-RUN     rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
-# Install Node.js and npm
-RUN     yum install -y npm
+# Create app directory
+WORKDIR /usr/src/app
+
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json ./
+
+RUN npm install
+# If you are building your code for production
+# RUN npm install --only=production
 
 # Bundle app source
-COPY . /src
-# Install app dependencies
-RUN cd /src; npm install
+COPY . .
 
-EXPOSE  8080
-CMD ["node", "/src/main.js", "8080"]
+EXPOSE 8080
+CMD [ "npm", "start" ]
