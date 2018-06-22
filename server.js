@@ -5,13 +5,13 @@ const express = require('express');
 // Constants
 const PORT = 8080;
 const HOST = '0.0.0.0';
-var requestCounter = 0;
+//var requestCounter = 0;
 
 // App
 const app = express();
 app.get('/', (req, res) => {
-  requestCounter++;
-  console.log(`Current Counter: ${requestCounter}`);
+  //requestCounter++;
+  //console.log(`Current Counter: ${requestCounter}`);
   res.send('Hello world\n');
 });
 
