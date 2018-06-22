@@ -1,6 +1,8 @@
-<b>Images</b> - Copy of the OS from Docker Hub or elsewhere (like Windows or Ubuntu ISO file)
+This is a small NodeJS App which is dockerized.
 
-<b>Containers</b> - Running instances of the images
+<b>Docker Images</b> - Copy of the OS from Docker Hub or elsewhere (like Windows or Ubuntu ISO file)
+
+<b>Docker Containers</b> - Running instances of the images
 
 ### Commands
 * docker ps -> Only running instances
